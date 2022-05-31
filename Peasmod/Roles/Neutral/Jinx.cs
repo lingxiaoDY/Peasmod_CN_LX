@@ -15,10 +15,10 @@ namespace Peasmod.Roles.Neutral
         {
         }
 
-        public override string Name => "Jinx";
-        public override string Description => "Be one of the last survivors";
+        public override string Name => "天煞孤星";
+        public override string Description => "成为最后的幸存者";
         public override string LongDescription => "";
-        public override string TaskText => "Be one of the last three survivors to win";
+        public override string TaskText => "成为最后的幸存者来获取胜利";
         public override Color Color => ModdedPalette.JinxColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Alone;

@@ -19,11 +19,11 @@ namespace Peasmod.Roles.Impostor
             Instance = this;
         }
 
-        public override string Name => "Undertaker";
+        public override string Name => "送葬者";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.DragBody.png", 702f);
-        public override string Description => "Take dead bodies away";
+        public override string Description => "把死尸拖走";
         public override string LongDescription => "";
-        public override string TaskText => "Take dead bodies away";
+        public override string TaskText => "把死尸拖走";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Impostor;
         public override Team Team => Team.Impostor;
@@ -48,17 +48,17 @@ namespace Peasmod.Roles.Impostor
                 {
                     CarryingBody = false;
                     Button.SetImage(Utility.CreateSprite("Peasmod.Resources.Buttons.DragBody.png", 702f));
-                    Button.Text = "<size=40%>Drag";
+                    Button.Text = "<size=40%>拖动";
                     RpcDragBody(PlayerControl.LocalPlayer, false, byte.MaxValue);
                 }
                 else
                 {
                     CarryingBody = true;
                     Button.SetImage(Utility.CreateSprite("Peasmod.Resources.Buttons.DropBody.png", 803f));
-                    Button.Text = "<size=40%>Drop";
+                    Button.Text = "<size=40%>放开";
                     RpcDragBody(PlayerControl.LocalPlayer, true, Button.ObjectTarget.GetComponent<DeadBody>().ParentId);
                 }
-            }, 0f, Utility.CreateSprite("Peasmod.Resources.Buttons.DragBody.png", 702f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>Drag",
+            }, 0f, Utility.CreateSprite("Peasmod.Resources.Buttons.DragBody.png", 702f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>拖动",
                 target: CustomButton.TargetType.Object, targetColor: Color, chooseObjectTarget: o => o.GetComponent<DeadBody>() != null);
         }
         

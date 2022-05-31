@@ -15,10 +15,10 @@ namespace Peasmod.Roles.Crewmate
         {
         }
 
-        public override string Name => "Sheriff";
-        public override string Description => "Execute the impostor";
+        public override string Name => "警长";
+        public override string Description => "处决伪装者";
         public override string LongDescription => "";
-        public override string TaskText => "Execute the impostor";
+        public override string TaskText => "处决伪装者";
         public override Color Color => ModdedPalette.SheriffColor;
         public override Team Team => Team.Crewmate;
         public override Visibility Visibility => Visibility.NoOne;
@@ -26,7 +26,7 @@ namespace Peasmod.Roles.Crewmate
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "CanKillNeutrals", new CustomToggleOption("sheriffkillneutrals", "Can Kill Neutrals", false)
+                "CanKillNeutrals", new CustomToggleOption("sheriffkillneutrals", "可以击杀中立阵营", false)
             }
         };
         public override bool CanKill(PlayerControl victim = null) => true;

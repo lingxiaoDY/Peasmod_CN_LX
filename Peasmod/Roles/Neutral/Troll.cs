@@ -12,10 +12,10 @@ namespace Peasmod.Roles.Neutral
     {
         public Troll(BasePlugin plugin) : base(plugin) { }
 
-        public override string Name => "Troll";
-        public override string Description => "Get killed by an impostor";
+        public override string Name => "钓鱼人";
+        public override string Description => "被一个伪装者杀死";
         public override string LongDescription => "";
-        public override string TaskText => "Get killed by an impostor";
+        public override string TaskText => "被一个伪装者杀死";
         public override Color Color => ModdedPalette.TrollColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Alone;

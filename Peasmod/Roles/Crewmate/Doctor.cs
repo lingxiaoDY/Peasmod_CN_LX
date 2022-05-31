@@ -17,11 +17,11 @@ namespace Peasmod.Roles.Crewmate
     {
         public Doctor(BasePlugin plugin) : base(plugin) { }
 
-        public override string Name => "Doctor";
+        public override string Name => "神医";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.Revive.png", 803f);
-        public override string Description => "Revive dead crewmates";
+        public override string Description => "复活死去的船员";
         public override string LongDescription => "";
-        public override string TaskText => "Revive dead crewmates";
+        public override string TaskText => "复活死去的船员";
         public override Color Color => ModdedPalette.DoctorColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;
@@ -29,7 +29,7 @@ namespace Peasmod.Roles.Crewmate
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "ReviveCooldown", new CustomNumberOption("doctorcooldown", "Revive-Cooldown", 10, 60, 1, 20, NumberSuffixes.Seconds)
+                "ReviveCooldown", new CustomNumberOption("doctorcooldown", "复活冷却时间", 10, 60, 1, 20, NumberSuffixes.Seconds)
             }
         };
 
@@ -42,7 +42,7 @@ namespace Peasmod.Roles.Crewmate
                     var body = Button.ObjectTarget.GetComponent<DeadBody>();
                     RpcRevive(body.ParentId.GetPlayer());
                 }, ((CustomNumberOption) AdvancedOptions["ReviveCooldown"]).Value,
-                Utility.CreateSprite("Peasmod.Resources.Buttons.Revive.png", 803f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>Revive", 
+                Utility.CreateSprite("Peasmod.Resources.Buttons.Revive.png", 803f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>复活", 
                 target: CustomButton.TargetType.Object, targetColor: Color, chooseObjectTarget: o => o.GetComponent<DeadBody>() != null);
         }
 

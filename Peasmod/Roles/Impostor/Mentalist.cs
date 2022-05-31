@@ -22,10 +22,10 @@ namespace Peasmod.Roles.Impostor
 		{
 			Instance = this;
 		}
-		public override string Name => "Mentalist";
-		public override string Description => "Control the minds of others";
+		public override string Name => "催眠师";
+		public override string Description => "给其他玩家洗脑催眠";
 		public override string LongDescription => "";
-		public override string TaskText => "Control the minds of other players";
+		public override string TaskText => "给其他玩家洗脑催眠";
 		public override Color Color => Palette.ImpostorRed;
 		public override Visibility Visibility => Visibility.Impostor;
 		public override Team Team => Team.Impostor;
@@ -35,10 +35,10 @@ namespace Peasmod.Roles.Impostor
 		public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
 		{
 			{
-				"ControlCooldown", new CustomNumberOption("controlcooldown", "Controlling-Cooldown", 20f, 60f, 1f, 20f, NumberSuffixes.Seconds) {AdvancedRoleOption = true}
+				"ControlCooldown", new CustomNumberOption("controlcooldown", "催眠冷却", 20f, 60f, 1f, 20f, NumberSuffixes.Seconds) {AdvancedRoleOption = true}
 			},
 			{
-				"ControlDuration", new CustomNumberOption("controlduration", "Controlling-Duration", 10f, 30f, 1f, 10f, NumberSuffixes.Seconds) {AdvancedRoleOption = true}
+				"ControlDuration", new CustomNumberOption("controlduration", "催眠持续时间", 10f, 30f, 1f, 10f, NumberSuffixes.Seconds) {AdvancedRoleOption = true}
 			}
 		};
 		public override bool CanVent => true;
@@ -68,7 +68,7 @@ namespace Peasmod.Roles.Impostor
 			}, ((CustomNumberOption) AdvancedOptions["ControlCooldown"]).Value, Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"), p => p.IsRole(this) && !p.Data.IsDead, _ => true, effectDuration: ((CustomNumberOption) AdvancedOptions["ControlDuration"]).Value, onEffectEnd: () =>
 			{
 				RpcMindControl(PlayerControl.LocalPlayer, ControlledPlayers[PlayerControl.LocalPlayer.PlayerId].GetPlayer(), false);
-			}, text: "<size=40%>Control", textOffset: new Vector2(0f, 0.5f));
+			}, text: "<size=40%>催眠", textOffset: new Vector2(0f, 0.5f));
 		}
 
 		public override void OnUpdate()

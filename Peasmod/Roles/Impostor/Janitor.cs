@@ -19,10 +19,10 @@ namespace Peasmod.Roles.Impostor
         {
         }
 
-        public override string Name => "Janitor";
-        public override string Description => "Clear every evidence";
+        public override string Name => "清理者";
+        public override string Description => "清除所有证据";
         public override string LongDescription => "";
-        public override string TaskText => "Remove dead bodys so you don't get caught";
+        public override string TaskText => "清除尸体，避免被发现";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Impostor;
         public override Team Team => Team.Impostor;
@@ -31,10 +31,10 @@ namespace Peasmod.Roles.Impostor
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "CleanBodyCooldown", new CustomNumberOption("janitorcooldown", "Clean-Body-Cooldown", 10, 120, 1, 40, NumberSuffixes.Seconds)
+                "CleanBodyCooldown", new CustomNumberOption("janitorcooldown", "清理冷却", 10, 120, 1, 40, NumberSuffixes.Seconds)
             },
             {
-                "CanKill", new CustomToggleOption("janitorcankill", "Can Kill", true)
+                "CanKill", new CustomToggleOption("janitorcankill", "可以击杀", true)
             }
         };
         public override bool CanVent => true;
@@ -46,7 +46,7 @@ namespace Peasmod.Roles.Impostor
         public override void OnGameStart()
         {
             Button = CustomButton.AddButton(() => RpcCleanBody(PlayerControl.LocalPlayer, Button.ObjectTarget.GetComponent<DeadBody>().ParentId), ((CustomNumberOption) AdvancedOptions["CleanBodyCooldown"]).Value,
-                PeasAPI.Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>Clear", textOffset: new Vector2(0f, 0.5f),
+                PeasAPI.Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>清理", textOffset: new Vector2(0f, 0.5f),
                 target: CustomButton.TargetType.Object, targetColor: Color);
         }
 

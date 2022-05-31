@@ -17,10 +17,10 @@ namespace Peasmod.Roles.Crewmate
         {
         }
 
-        public override string Name => "Firefighter";
-        public override string Description => "Save the crew from a disaster";
+        public override string Name => "消防员";
+        public override string Description => "拯救船员于水火之中";
         public override string LongDescription => "";
-        public override string TaskText => "Save the crew from a disaster by fixing the sabotage of the impostors";
+        public override string TaskText => "通过修复伪装者的破坏行为，将船员从灾难中拯救出来";
         public override Color Color => ModdedPalette.FirefighterColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;
@@ -28,10 +28,10 @@ namespace Peasmod.Roles.Crewmate
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "FixCooldown", new CustomNumberOption("FirefighterFixCooldown", "Fix-Cooldown", 20, 60, 1, 20, NumberSuffixes.Seconds)
+                "FixCooldown", new CustomNumberOption("FirefighterFixCooldown", "修理冷却时间", 20, 60, 1, 20, NumberSuffixes.Seconds)
             },
             {
-                "FirefighterMaxUses", new CustomNumberOption("FirefighterMaxUses", "Maximum of Pardons", 1, 10, 1, 2, NumberSuffixes.None)
+                "FirefighterMaxUses", new CustomNumberOption("FirefighterMaxUses", "修理次数", 1, 10, 1, 2, NumberSuffixes.None)
             }
         };
 
@@ -46,7 +46,7 @@ namespace Peasmod.Roles.Crewmate
                     RpcRepairSabotage(PlayerControl.LocalPlayer);
                 },
                 ((CustomNumberOption) AdvancedOptions["FixCooldown"]).Value, Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"), p => p.IsRole(this) && !p.Data.IsDead, 
-                _ => ShipStatus.Instance.Systems[SystemTypes.Sabotage].Cast<SabotageSystemType>().AnyActive && TimesFixed < ((CustomNumberOption)AdvancedOptions["FirefighterMaxUses"]).Value, text: "<size=40%>Fix");
+                _ => ShipStatus.Instance.Systems[SystemTypes.Sabotage].Cast<SabotageSystemType>().AnyActive && TimesFixed < ((CustomNumberOption)AdvancedOptions["FirefighterMaxUses"]).Value, text: "<size=40%>修复");
         }
 
         [MethodRpc((uint) CustomRpcCalls.RepairSabotage)]

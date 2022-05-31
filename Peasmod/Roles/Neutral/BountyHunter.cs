@@ -18,10 +18,10 @@ namespace Peasmod.Roles.Neutral
         {
         }
 
-        public override string Name => "Bounty Hunter";
-        public override string Description => "Get your target voted out";
+        public override string Name => "处刑者";
+        public override string Description => "让你的目标被放逐";
         public override string LongDescription => "";
-        public override string TaskText => "Make the other players vote out your target";
+        public override string TaskText => "让你的目标在投票时被放逐";
         public override Color Color => ModdedPalette.BountyHunterColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Alone;
@@ -44,7 +44,7 @@ namespace Peasmod.Roles.Neutral
                 if (target != null)
                 {
                     SetBountyTarget(PlayerControl.LocalPlayer, target.PlayerId);
-                    TextMessageManager.ShowMessage("Your Target is: " + target.name, 1f);
+                    TextMessageManager.ShowMessage("你的目标是: " + target.name, 1f);
                 }
                 else
                     ChooseTarget();
@@ -73,7 +73,7 @@ namespace Peasmod.Roles.Neutral
                         Targets.Remove(PlayerControl.LocalPlayer.PlayerId);
                     else
                         Targets[PlayerControl.LocalPlayer.PlayerId].GetPlayer().nameText.text = Color.black.ToTextColor() +
-                            Targets[PlayerControl.LocalPlayer.PlayerId].GetPlayer().name + "\nTarget";
+                            Targets[PlayerControl.LocalPlayer.PlayerId].GetPlayer().name + "\n目标";
                 }
             }
             catch
@@ -88,7 +88,7 @@ namespace Peasmod.Roles.Neutral
             {
                 var playerVoteArea = meeting.playerStates.Where(p => p.TargetPlayerId == Targets[PlayerControl.LocalPlayer.PlayerId]).ToList()[0];
                 playerVoteArea.NameText.color = Color.black;
-                playerVoteArea.NameText.text = $"{Targets[PlayerControl.LocalPlayer.PlayerId].GetPlayer().name}\nTarget";
+                playerVoteArea.NameText.text = $"{Targets[PlayerControl.LocalPlayer.PlayerId].GetPlayer().name}\n目标";
             }
         }
 

@@ -36,17 +36,17 @@ namespace Peasmod.Patches
                 void openPopUp()
                 {
                     var stringBuilder = new StringBuilder();
-                    stringBuilder.AppendLine($"{Utility.StringColor.Green}Peasmod{Utility.StringColor.Reset} powered by @Grüni");
-                    stringBuilder.AppendLine("Developed by:");
-                    stringBuilder.AppendLine("@Peasplayer#2541");
-                    stringBuilder.AppendLine("Art by:");
+                    stringBuilder.AppendLine($"{Utility.StringColor.Green}Peasmod{Utility.StringColor.Reset} 制作： @Grüni");
+                    stringBuilder.AppendLine("开发人员： @Peasplayer#2541");
+                    stringBuilder.AppendLine("艺术设计：");
                     stringBuilder.AppendLine("@C.A 100 PRO PLAYER#4147 & @Sam.#0006");
-                    stringBuilder.AppendLine("");
                     stringBuilder.AppendLine($"{Utility.StringColor.Red}PeasAPI{Utility.StringColor.Reset}");
-                    stringBuilder.AppendLine("Developed by:");
-                    stringBuilder.AppendLine("@Peasplayer#2541");
-                    stringBuilder.AppendLine("@Plix#7013");
+                    stringBuilder.AppendLine("开发人员：");
+                    stringBuilder.AppendLine("@Peasplayer#2541 @Plix#7013");
                     stringBuilder.AppendLine("@Pandapip1#8943");
+                    stringBuilder.AppendLine("中文汉化：");
+                    stringBuilder.AppendLine($"{Utility.StringColor.Red}四个憨批汉化组{Utility.StringColor.Reset}");
+                    stringBuilder.AppendLine($"翻译：{Utility.StringColor.Orange}凌霄LX{Utility.StringColor.Reset}");
                     var popup = GeneratePopUp();
                     popup.Show(stringBuilder.ToString());
                     popup.TextAreaTMP.transform.SetY(0.25f);

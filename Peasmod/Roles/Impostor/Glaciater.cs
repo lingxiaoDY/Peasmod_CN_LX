@@ -20,11 +20,11 @@ namespace Peasmod.Roles.Impostor
             Instance = this;
         }
 
-        public override string Name => "Glaciater";
+        public override string Name => "冻结者";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.Freezing.png", 851f);
-        public override string Description => "Stop the players from moving";
+        public override string Description => "阻止船员移动";
         public override string LongDescription => "";
-        public override string TaskText => "Stop the players from moving";
+        public override string TaskText => "阻止船员移动";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Impostor;
         public override Team Team => Team.Impostor;
@@ -33,10 +33,10 @@ namespace Peasmod.Roles.Impostor
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "FreezeCooldown", new CustomNumberOption("freezecooldown", "Freezing-Cooldown", 20, 60, 1, 20, NumberSuffixes.Seconds)
+                "FreezeCooldown", new CustomNumberOption("freezecooldown", "冻结冷却", 20, 60, 1, 20, NumberSuffixes.Seconds)
             },
             {
-                "FreezeDuration", new CustomNumberOption("freezeduration", "Freezing-Duration", 10, 30, 1, 10, NumberSuffixes.Seconds)
+                "FreezeDuration", new CustomNumberOption("freezeduration", "冻结持续时间", 10, 30, 1, 10, NumberSuffixes.Seconds)
             }
         };
         public override bool CanVent => true;
@@ -57,7 +57,7 @@ namespace Peasmod.Roles.Impostor
                 Utility.CreateSprite("Peasmod.Resources.Buttons.Freezing.png", 851f), p => p.IsRole(this) && !p.Data.IsDead, _ => true,
                 effectDuration: ((CustomNumberOption) AdvancedOptions["FreezeDuration"]).Value, onEffectEnd: () => {
                     RpcFreeze(PlayerControl.LocalPlayer, false);
-                }, text: "<size=40%>Freeze");
+                }, text: "<size=40%>冻结");
         }
 
         public override void OnUpdate()
@@ -81,7 +81,7 @@ namespace Peasmod.Roles.Impostor
             if (!PlayerControl.LocalPlayer.Data.Role.IsImpostor)
                 PlayerControl.LocalPlayer.moveable = !enable;
             if (PlayerControl.LocalPlayer.Data.Role.IsImpostor && !sender.IsLocal())
-                TextMessageManager.ShowMessage(enable ? "Everyone got frozen" : "Everyone got unfrozen", 1f);
+                TextMessageManager.ShowMessage(enable ? "所有人都冻住了" : "所有人都解冻了", 1f);
         }
     }
 }

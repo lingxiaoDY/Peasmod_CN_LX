@@ -18,10 +18,10 @@ namespace Peasmod.Roles.Crewmate
             Instance = this;
         }
 
-        public override string Name => "Officer";
-        public override string Description => "Arrest the impostor";
+        public override string Name => "警官";
+        public override string Description => "逮捕伪装者";
         public override string LongDescription => "";
-        public override string TaskText => "Arrest an kill the impostor";
+        public override string TaskText => "逮捕并击杀伪装者";
         public override Color Color => ModdedPalette.OfficerColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;
@@ -29,16 +29,16 @@ namespace Peasmod.Roles.Crewmate
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "ArrestCooldown", new CustomNumberOption("officercooldown", "Arrest-Cooldown", 10, 60, 1, 20, NumberSuffixes.Seconds)
+                "ArrestCooldown", new CustomNumberOption("officercooldown", "逮捕冷却", 10, 60, 1, 20, NumberSuffixes.Seconds)
             },
             {
-                "ArrestPeriod", new CustomStringOption("officerarrestperiod", "Arrest-Period", "Seconds", "Until Meeting")
+                "ArrestPeriod", new CustomStringOption("officerarrestperiod", "逮捕时间", "几秒钟", "会议开始前")
             },
             {
-                "ArrestDuration", new CustomNumberOption("officerduration", $"Arrest-Duration", 10, 120, 1, 30, NumberSuffixes.Seconds)
+                "ArrestDuration", new CustomNumberOption("officerduration", $"逮捕持续时间", 10, 120, 1, 30, NumberSuffixes.Seconds)
             },
             {
-                "PossibleKills", new CustomNumberOption("officerkills", $"Number of Kills", 0, 10, 1, 10, NumberSuffixes.None)
+                "PossibleKills", new CustomNumberOption("officerkills", $"可击杀次数", 0, 10, 1, 10, NumberSuffixes.None)
             }
         };
 
@@ -71,7 +71,7 @@ namespace Peasmod.Roles.Crewmate
             Button = CustomButton.AddButton(
                 () => RpcFreeze(PlayerControl.LocalPlayer, Button.PlayerTarget, true),
                 ((CustomNumberOption) AdvancedOptions["ArrestCooldown"]).Value, Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"), p => p.IsRole(this) && !p.Data.IsDead, _ => !ArrestedSomeone,
-                text: "<size=40%>Arrest", textOffset: new Vector2(0f, 0.5f), target: CustomButton.TargetType.Player, targetColor: Color);
+                text: "<size=40%>逮捕", textOffset: new Vector2(0f, 0.5f), target: CustomButton.TargetType.Player, targetColor: Color);
             if (((CustomStringOption) AdvancedOptions["ArrestPeriod"]).Value == 0)
             {
                 Button.EffectDuration = ((CustomNumberOption) AdvancedOptions["ArrestDuration"]).Value;

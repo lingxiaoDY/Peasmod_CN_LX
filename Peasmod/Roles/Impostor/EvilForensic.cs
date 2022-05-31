@@ -16,10 +16,10 @@ public class EvilForensic : BaseRole
     {
     }
 
-    public override string Name => "Evil Forensic";
-    public override string Description => "Poison the other crewmates";
-    public override string LongDescription => "Inject a poison into the blood of the other crewmates which will kill them after a short time";
-    public override string TaskText => "Poison the other crewmates";
+    public override string Name => "邪恶法医";
+    public override string Description => "给船员下毒";
+    public override string LongDescription => "在船员的血液中注入毒药，在短时间内就能杀死他们";
+    public override string TaskText => "给船员下毒";
     public override Color Color => Palette.ImpostorRed;
     public override Visibility Visibility => Visibility.Impostor;
     public override Team Team => Team.Impostor;
@@ -28,10 +28,10 @@ public class EvilForensic : BaseRole
     public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
     {
         {
-            "PoisonCooldown", new CustomNumberOption("poisoncooldown", "Poison-Cooldown", 30, 180, 1, 30, NumberSuffixes.Seconds)
+            "PoisonCooldown", new CustomNumberOption("poisoncooldown", "下毒冷却", 30, 180, 1, 30, NumberSuffixes.Seconds)
         },
         {
-            "PoisonDuration", new CustomNumberOption("poisonduration", "Poison-Duration", 20, 60, 1, 20, NumberSuffixes.Seconds)
+            "PoisonDuration", new CustomNumberOption("poisonduration", "下毒持续时间", 20, 60, 1, 20, NumberSuffixes.Seconds)
         }
     };
     public override bool CanVent => true;
@@ -48,7 +48,7 @@ public class EvilForensic : BaseRole
             {
                 PoisonVictim = PlayerControl.LocalPlayer.FindClosestTarget(true).PlayerId;
             }, ((CustomNumberOption) AdvancedOptions["PoisonCooldown"]).Value, Utility.CreateSprite("Peasmod.Resources.Buttons.Default.png"),
-            p => p.IsRole(this) && !p.Data.IsDead, p => PlayerControl.LocalPlayer.FindClosestTarget(true) != null, text: "<size=40%>Poison", textOffset: new Vector2(0f, 0.5f),
+            p => p.IsRole(this) && !p.Data.IsDead, p => PlayerControl.LocalPlayer.FindClosestTarget(true) != null, text: "<size=40%>下毒", textOffset: new Vector2(0f, 0.5f),
             onEffectEnd: () =>
             {
                 var target = PoisonVictim.GetPlayer();

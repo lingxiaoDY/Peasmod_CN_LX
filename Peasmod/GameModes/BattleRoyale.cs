@@ -17,7 +17,7 @@ namespace Peasmod.GameModes
             Instance = this;
         }
 
-        public override string Name => $"{Utility.StringColor.Red}BattleRoyale";
+        public override string Name => $"{Utility.StringColor.Red}大逃杀";
 
         public override bool HasToDoTasks => false;
 
@@ -25,7 +25,7 @@ namespace Peasmod.GameModes
 
         public override string GetObjective(PlayerControl player)
         {
-            return "Be the last survivor!";
+            return "成为最后的幸存者!";
         }
 
         public override void OnGameStart()
@@ -51,7 +51,7 @@ namespace Peasmod.GameModes
             {
                 var winners = new System.Collections.Generic.List<GameData.PlayerInfo>();
                 winners.Add(killer.Data);
-                new CustomEndReason(Palette.ImpostorRed, "Victory Royale", "Defeat", "impostor", winners);
+                new CustomEndReason(Palette.ImpostorRed, "胜利", "失败", "伪装者", winners);
             }
         }
 
@@ -59,7 +59,7 @@ namespace Peasmod.GameModes
         {
             return new Data.CustomIntroScreen(true, "BattleRoyale", "", Palette.ImpostorRed,
                 new System.Collections.Generic.List<byte> { PlayerControl.LocalPlayer.PlayerId },
-                player.GetRole() == null, "Survivor", "Be the last one to survive", Palette.ImpostorRed);
+                player.GetRole() == null, "幸存者", "成为最后的幸存者活下去", Palette.ImpostorRed);
         }
 
         public override RoleTypes? AssignLocalRole(PlayerControl player)

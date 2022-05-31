@@ -13,10 +13,10 @@ namespace Peasmod.Roles.Crewmate
     {
         public Inspector(BasePlugin plugin) : base(plugin) { }
 
-        public override string Name => "Inspector";
-        public override string Description => "Find the Impostor";
+        public override string Name => "调查员";
+        public override string Description => "找出伪装者";
         public override string LongDescription => "";
-        public override string TaskText => "Find the Impostor by his footprints";
+        public override string TaskText => "通过脚印找到伪装者";
         public override Color Color => ModdedPalette.InspectorColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;

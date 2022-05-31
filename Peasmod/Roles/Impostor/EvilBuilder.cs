@@ -18,11 +18,11 @@ namespace Peasmod.Roles.Impostor
         {
         }
 
-        public override string Name => "Evil Builder";
+        public override string Name => "邪恶管道工";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.CreateVent.png", 552f);
-        public override string Description => "Build new vents";
+        public override string Description => "制造新的通风管道";
         public override string LongDescription => "";
-        public override string TaskText => "Add new vents to the map";
+        public override string TaskText => "在地图上增加新的通风管道";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Impostor;
         public override Team Team => Team.Impostor;
@@ -31,7 +31,7 @@ namespace Peasmod.Roles.Impostor
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "VentBuildingCooldown", new CustomNumberOption("ventbuildingcooldown", $"Vent-Building-Cooldown", 10, 30, 1, 10, NumberSuffixes.Seconds)
+                "VentBuildingCooldown", new CustomNumberOption("ventbuildingcooldown", $"挖洞冷却", 10, 30, 1, 10, NumberSuffixes.Seconds)
             }
         };
         public override bool CanVent => true;
@@ -47,7 +47,7 @@ namespace Peasmod.Roles.Impostor
             {
                 var pos = PlayerControl.LocalPlayer.transform.position;
                 RpcCreateVent(PlayerControl.LocalPlayer, pos.x, pos.y, pos.z);
-            }, ((CustomNumberOption) AdvancedOptions["VentBuildingCooldown"]).Value, PeasAPI.Utility.CreateSprite("Peasmod.Resources.Buttons.CreateVent.png", 552f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>Build");
+            }, ((CustomNumberOption) AdvancedOptions["VentBuildingCooldown"]).Value, PeasAPI.Utility.CreateSprite("Peasmod.Resources.Buttons.CreateVent.png", 552f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>挖洞");
         }
 
         public override void OnUpdate()

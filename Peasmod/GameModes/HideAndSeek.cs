@@ -26,7 +26,7 @@ namespace Peasmod.GameModes
             Instance = this;
         }
 
-        public override string Name => $"{PeasAPI.Utility.StringColor.Orange}Hide and Seek";
+        public override string Name => $"{PeasAPI.Utility.StringColor.Orange}捉迷藏";
 
         public override bool Enabled => GameModeManager.IsGameModeActive(this);
 
@@ -57,9 +57,9 @@ namespace Peasmod.GameModes
         public override Data.CustomIntroScreen? GetIntroScreen(PlayerControl player)
         {
             if (player.Data.Role.IsImpostor)
-                return new Data.CustomIntroScreen(true, "Hide and Seek", "", Palette.Orange);
-            return new Data.CustomIntroScreen(true, "Hide and Seek", "", Palette.Orange, null,
-                true, "Hider", "Stay hidden", Palette.Orange);
+                return new Data.CustomIntroScreen(true, "捉迷藏", "", Palette.Orange);
+            return new Data.CustomIntroScreen(true, "捉迷藏", "", Palette.Orange, null,
+                true, "躲藏者", "保持隐蔽", Palette.Orange);
         }
 
         public override void OnUpdate()
@@ -92,11 +92,11 @@ namespace Peasmod.GameModes
 
                     var seconds = Math.Floor(TimeLeft) - Math.Floor(TimeLeft / 60) * 60;
                     var formatedTime = Math.Floor(TimeLeft / 60) + ":" + (seconds < 10 ? "0" + seconds : seconds);
-                    _timeLeftText.text = $"Time Left: {formatedTime}";
+                    _timeLeftText.text = $"剩余时间: {formatedTime}";
                 }
                 else if (PlayerControl.LocalPlayer.Data.Role.IsImpostor)
                 {
-                    new CustomEndReason(Palette.CrewmateBlue, "Victory", "Defeat", "crew",
+                    new CustomEndReason(Palette.CrewmateBlue, "胜利", "失败", "船员",
                         PlayerControl.AllPlayerControls.ToArray().Where(player => !player.Data.Role.IsImpostor).ToList()
                             .ConvertAll(player => player.Data));
                 }
@@ -116,8 +116,8 @@ namespace Peasmod.GameModes
         public override string GetObjective(PlayerControl player)
         {
             if (player.Data.Role.IsImpostor)
-                return "Find all the players";
-            return "Hide from the Seekers";
+                return "找到所有玩家";
+            return "避开寻觅者";
         }
 
         public override bool ShouldGameStop(GameOverReason reason)
@@ -166,7 +166,7 @@ namespace Peasmod.GameModes
                 
                 IsFroozen = false;
                 PlayerControl.LocalPlayer.moveable = true;
-                TextMessageManager.RpcShowMessage("The seekers can\nseek now!", 1f, PlayerControl.AllPlayerControls.ToArray().ToList());
+                TextMessageManager.RpcShowMessage("寻觅者可以\n开始寻找了!", 1f, PlayerControl.AllPlayerControls.ToArray().ToList());
             }
         }
 

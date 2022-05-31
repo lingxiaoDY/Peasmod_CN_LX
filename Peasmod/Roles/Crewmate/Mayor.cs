@@ -14,10 +14,10 @@ namespace Peasmod.Roles.Crewmate
     {
         public Mayor(BasePlugin plugin) : base(plugin) { }
 
-        public override string Name => "Mayor";
-        public override string Description => "Your vote counts twice";
+        public override string Name => "市长";
+        public override string Description => "你的票数算作两票";
         public override string LongDescription => "";
-        public override string TaskText => "Your vote counts twice. Use it wisely!";
+        public override string TaskText => "你的票数算作两票，请合理使用!";
         public override Color Color => ModdedPalette.MayorColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;

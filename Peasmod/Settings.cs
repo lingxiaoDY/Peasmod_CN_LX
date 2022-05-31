@@ -17,75 +17,75 @@ namespace Peasmod
             new CustomOptionHeader(Utility.StringColor.Green + "\nPeasmod" + Utility.StringColor.Reset);
 
         public static readonly CustomOptionButton
-            SectionGeneral = new CustomOptionButton("general", "˅ General", false);
+            SectionGeneral = new CustomOptionButton("general", "˅ 常规设置", false);
 
-        public static CustomOptionHeader GeneralHeader = new CustomOptionHeader("General");
+        public static CustomOptionHeader GeneralHeader = new CustomOptionHeader("常规");
 
         public static readonly CustomToggleOption Venting = new CustomToggleOption("venting",
-            $"• {Palette.CrewmateBlue.GetTextColor()}Venting{Utility.StringColor.Reset}", true);
+            $"• {Palette.CrewmateBlue.GetTextColor()}通风管道{Utility.StringColor.Reset}", true);
 
         public static readonly CustomToggleOption ReportBodys =
             new CustomToggleOption("reporting",
-                $"• {Palette.CrewmateBlue.GetTextColor()}Body-Reporting{Utility.StringColor.Reset}", true);
+                $"• {Palette.CrewmateBlue.GetTextColor()}尸体报告{Utility.StringColor.Reset}", true);
 
         public static readonly CustomToggleOption Sabotaging =
             new CustomToggleOption("sabotaging",
-                $"• {Palette.CrewmateBlue.GetTextColor()}Sabotaging{Utility.StringColor.Reset}", true);
+                $"• {Palette.CrewmateBlue.GetTextColor()}破坏{Utility.StringColor.Reset}", true);
 
         public static readonly CustomToggleOption CrewVenting =
             new CustomToggleOption("crewventing",
-                $"• {Palette.CrewmateBlue.GetTextColor()}Crew-Venting{Utility.StringColor.Reset}", false);
+                $"• {Palette.CrewmateBlue.GetTextColor()}船员通风管道{Utility.StringColor.Reset}", false);
 
         public static readonly CustomOptionButton SectionModes =
-            new CustomOptionButton("ModeSettings", "˅ GameModes", false);
+            new CustomOptionButton("ModeSettings", "˅ 小游戏模式", false);
 
         public static CustomOptionHeader ModesHeader =
-            new CustomOptionHeader($"GameModes");
+            new CustomOptionHeader($"游戏模式");
 
         public static CustomOptionHeader HideAndSeek =
-            new CustomOptionHeader($"Hide and Seek");
+            new CustomOptionHeader($"捉迷藏");
 
         public static readonly CustomNumberOption HideAndSeekSeekerCooldown =
-            new CustomNumberOption("hideandseekseekercooldown", "• Seeker-Cooldown", 20, 60, 1, 20, NumberSuffixes.Seconds);
+            new CustomNumberOption("hideandseekseekercooldown", "• 寻觅者击杀冷却", 20, 60, 1, 20, NumberSuffixes.Seconds);
 
         public static readonly CustomNumberOption HideAndSeekSeekerDuration =
-            new CustomNumberOption("hideandseekseekerduration", "• Seeking-Duration", 30, 300, 10, 120, NumberSuffixes.Seconds);
+            new CustomNumberOption("hideandseekseekerduration", "• 游戏时间", 30, 300, 10, 120, NumberSuffixes.Seconds);
 
         public static readonly CustomToggleOption HideAndSeekSeekerVenting =
-            new CustomToggleOption("hideandseekseekerventing", "• Can Seeker Vent", false);
+            new CustomToggleOption("hideandseekseekerventing", "• 可使用通风管道", false);
         
         public static CustomOptionHeader PropHunt =
-            new CustomOptionHeader($"PropHunt");
+            new CustomOptionHeader($"猎杀者");
 
         public static readonly CustomNumberOption PropHuntSeekerCooldown =
-            new CustomNumberOption("prophuntseekercooldown", "• Seeker-Cooldown", 20, 60, 1, 20, NumberSuffixes.Seconds);
+            new CustomNumberOption("prophuntseekercooldown", "• 猎手冷却", 20, 60, 1, 20, NumberSuffixes.Seconds);
 
         public static readonly CustomNumberOption PropHuntSeekerDuration =
-            new CustomNumberOption("prophuntseekerduration", "• Seeking-Duration", 30, 300, 10, 120, NumberSuffixes.Seconds);
+            new CustomNumberOption("prophuntseekerduration", "• 游戏时间", 30, 300, 10, 120, NumberSuffixes.Seconds);
         
         public static readonly CustomNumberOption PropHuntSeekerClickCooldown =
-            new CustomNumberOption("prophuntseekerclickcooldown", "• Seeker-Click-Cooldown", 1, 60, 1, 5, NumberSuffixes.Seconds);
+            new CustomNumberOption("prophuntseekerclickcooldown", "• 猎手击杀冷却", 1, 60, 1, 5, NumberSuffixes.Seconds);
 
         public static CustomOptionHeader GodImpostor =
-            new CustomOptionHeader($"God Impostor");
+            new CustomOptionHeader($"伪装者之神");
 
         public static readonly CustomToggleOption VentBuilding =
-            new CustomToggleOption("ventbuilding", $"• Vent-Building", false);
+            new CustomToggleOption("ventbuilding", $"• 设置通风管道", false);
 
         public static readonly CustomToggleOption BodyDragging =
-            new CustomToggleOption("bodydragging", $"• Body-Dragging", false);
+            new CustomToggleOption("bodydragging", $"• 拖动尸体", false);
 
         public static readonly CustomToggleOption Invisibility =
-            new CustomToggleOption("invisibility", $"• Invisibility", false);
+            new CustomToggleOption("invisibility", $"• 隐身", false);
 
         public static readonly CustomToggleOption Freeze =
-            new CustomToggleOption("freeze", $"• Freezing", false);
+            new CustomToggleOption("freeze", $"• 冻结", false);
 
         public static readonly CustomToggleOption Morphing =
-            new CustomToggleOption("morphing", $"• Morphing", false);
+            new CustomToggleOption("morphing", $"• 化形", false);
 
         public static readonly CustomNumberOption MorphingCooldown =
-            new CustomNumberOption("morphingcooldown", $"└ Morphing-Cooldown", 20, 60, 1, 20, NumberSuffixes.Seconds);
+            new CustomNumberOption("morphingcooldown", $"└ 化形冷却", 20, 60, 1, 20, NumberSuffixes.Seconds);
 
         public static void Load()
         {

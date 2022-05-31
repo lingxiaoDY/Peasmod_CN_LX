@@ -13,10 +13,10 @@ namespace Peasmod.Roles.Neutral
         {
         }
 
-        public override string Name => "Traitor";
-        public override string Description => "Betray the crewmates";
+        public override string Name => "背叛者";
+        public override string Description => "背叛船员";
         public override string LongDescription => "";
-        public override string TaskText => "Betray the crewmates after you completed your tasks";
+        public override string TaskText => "完成任务后将会背叛船员";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => HasBetrayed ? Visibility.Impostor : Visibility.NoOne;
         public override Team Team => HasBetrayed ? Team.Impostor : Team.Role;

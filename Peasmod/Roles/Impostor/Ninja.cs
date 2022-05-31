@@ -20,11 +20,11 @@ namespace Peasmod.Roles.Impostor
             Instance = this;
         }
 
-        public override string Name => "Ninja";
+        public override string Name => "忍者";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.Hide.png", 794f);
-        public override string Description => "Kill players without being seen";
+        public override string Description => "在不被发现的情况下杀死船员";
         public override string LongDescription => "";
-        public override string TaskText => "Kill players without being seen by using your ability";
+        public override string TaskText => "通过使用你的能力，在不被发现的情况下杀死船员";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Impostor;
         public override Team Team => Team.Impostor;
@@ -34,11 +34,11 @@ namespace Peasmod.Roles.Impostor
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "InvisibilityCooldown", new CustomNumberOption("invisibilitycooldown", $"Invisibility-Cooldown", 20, 60, 1, 20,
+                "InvisibilityCooldown", new CustomNumberOption("invisibilitycooldown", $"隐身冷却", 20, 60, 1, 20,
                     NumberSuffixes.Seconds)
             },
             {
-                "InvisibilityDuration", new CustomNumberOption("invisibilityduration", $"Invisibility-Duration", 10, 30, 1, 10,
+                "InvisibilityDuration", new CustomNumberOption("invisibilityduration", $"隐身持续时间", 10, 30, 1, 10,
                     NumberSuffixes.Seconds)
             }
         };
@@ -57,7 +57,7 @@ namespace Peasmod.Roles.Impostor
             Button = CustomButton.AddButton(
                 () => { RpcGoInvisible(PlayerControl.LocalPlayer, true); },
                 ((CustomNumberOption) AdvancedOptions["InvisibilityCooldown"]).Value, Utility.CreateSprite("Peasmod.Resources.Buttons.Hide.png", 794f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, effectDuration: ((CustomNumberOption) AdvancedOptions["InvisibilityDuration"]).Value,
-                onEffectEnd: () => { RpcGoInvisible(PlayerControl.LocalPlayer, false); }, text: "<size=40%>Hide");
+                onEffectEnd: () => { RpcGoInvisible(PlayerControl.LocalPlayer, false); }, text: "<size=40%>隐身");
         }
 
         public override void OnUpdate()

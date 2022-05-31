@@ -52,29 +52,29 @@ namespace Peasmod
             CustomHatManager.RegisterNewHat("Christmas Tree", "Peasmod.Resources.Hats.XmasTree.png", new Vector2(0f, 0.2f), true, false, PeasAPI.Utility.CreateSprite("Peasmod.Resources.Hats.XmasTreeb.png"));
             CustomHatManager.RegisterNewHat("Christmas Sock", "Peasmod.Resources.Hats.Sock.png", new Vector2(0f, 0.2f), true, false, PeasAPI.Utility.CreateSprite("Peasmod.Resources.Hats.Sockb.png"));
             
-            CustomColorManager.RegisterCustomColor(new Color(59 / 255f, 47 / 255f, 47 / 255f), "Dark Coffee");
-            CustomColorManager.RegisterCustomColor(new Color(102/ 255f, 93 / 255f, 30 / 255f), "Antique Bronze");
-            CustomColorManager.RegisterCustomColor(new Color(139 / 255f, 128 / 255f, 0 / 255f), "Dark Yellow");
-            CustomColorManager.RegisterCustomColor(new Color(232 / 255f, 163 / 255f, 23 / 255f), "School Bus Yellow");
-            CustomColorManager.RegisterCustomColor(new Color(195 / 255f, 142 / 255f, 199/ 255f), "Purple Dragon");
-            CustomColorManager.RegisterCustomColor(new Color(97 / 255f, 64 / 255f, 81 / 255f), "Eggplant");
-            CustomColorManager.RegisterCustomColor(new Color(106 / 255f, 251 / 255f, 146 / 255f), "Dragon Green");
-            CustomColorManager.RegisterCustomColor(new Color(137 / 255f, 195 / 255f, 92 / 255f), "Green Peas");
-            CustomColorManager.RegisterCustomColor(new Color(78 / 255f, 226 / 255f, 236 / 255f), "Blue Diamond");
-            CustomColorManager.RegisterCustomColor(new Color(53 / 255f, 126 / 255f, 199 / 255f), "Windows Blue");
-            CustomColorManager.RegisterCustomColor(new Color(82/ 255f, 208/ 255f, 23 / 255f), "Pea Green");
+            CustomColorManager.RegisterCustomColor(new Color(59 / 255f, 47 / 255f, 47 / 255f), "深咖啡");
+            CustomColorManager.RegisterCustomColor(new Color(102/ 255f, 93 / 255f, 30 / 255f), "古铜");
+            CustomColorManager.RegisterCustomColor(new Color(139 / 255f, 128 / 255f, 0 / 255f), "深黄");
+            CustomColorManager.RegisterCustomColor(new Color(232 / 255f, 163 / 255f, 23 / 255f), "校车黄");
+            CustomColorManager.RegisterCustomColor(new Color(195 / 255f, 142 / 255f, 199/ 255f), "紫龙");
+            CustomColorManager.RegisterCustomColor(new Color(97 / 255f, 64 / 255f, 81 / 255f), "茄紫");
+            CustomColorManager.RegisterCustomColor(new Color(106 / 255f, 251 / 255f, 146 / 255f), "青龙");
+            CustomColorManager.RegisterCustomColor(new Color(137 / 255f, 195 / 255f, 92 / 255f), "豌豆绿");
+            CustomColorManager.RegisterCustomColor(new Color(78 / 255f, 226 / 255f, 236 / 255f), "宝石蓝");
+            CustomColorManager.RegisterCustomColor(new Color(53 / 255f, 126 / 255f, 199 / 255f), "天蓝");
+            CustomColorManager.RegisterCustomColor(new Color(82/ 255f, 208/ 255f, 23 / 255f), "青豆");
             
-            CustomColorManager.RegisterCustomColor(new Color(176 / 255f, 196 / 255f, 222 / 255f), "Light Steel Blue");
-            CustomColorManager.RegisterCustomColor(new Color(102 / 255f, 205 / 255f, 170 / 255f), "Medium Aquamarine");
-            CustomColorManager.RegisterCustomColor(new Color(139 / 255f, 0 / 255f, 139 / 255f), "Dark Magenta");
-            CustomColorManager.RegisterCustomColor(new Color(107 / 225f, 142 / 255f, 35 / 255f), "Olive Drab");
-            CustomColorManager.RegisterCustomColor(new Color(220 / 255f, 20 / 255f, 60 / 255f), "Crimson");
-            CustomColorManager.RegisterCustomColor(new Color(218 / 255f, 165 / 255f, 32 / 255f), "Goldenrod");
-            CustomColorManager.RegisterCustomColor(new Color(255 / 255f, 250 / 255f, 179 / 250f), "Snow");
-            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(65 / 255f, 32 / 255f, 43 / 255f), new Color(50 / 255f, 39 / 255f, 49 / 255f), "Dark Olive"));
-            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(45 / 255f, 37 / 255f, 69 / 255f), new Color(135 / 255f, 179 / 255f, 155 / 255f), "Sourheat"));
-            CustomColorManager.RegisterCustomColor(new Color(245 / 255f, 222 / 255f, 179 / 255f), "Wheat");
-            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(65 / 255f, 32 / 255f, 43 / 255f), new Color(50 / 255f, 39 / 255f, 49 / 255f), "Dark Olive"));
+            CustomColorManager.RegisterCustomColor(new Color(176 / 255f, 196 / 255f, 222 / 255f), "浅钢蓝");
+            CustomColorManager.RegisterCustomColor(new Color(102 / 255f, 205 / 255f, 170 / 255f), "宝石浅蓝");
+            CustomColorManager.RegisterCustomColor(new Color(139 / 255f, 0 / 255f, 139 / 255f), "深品");
+            CustomColorManager.RegisterCustomColor(new Color(107 / 225f, 142 / 255f, 35 / 255f), "橄榄绿");
+            CustomColorManager.RegisterCustomColor(new Color(220 / 255f, 20 / 255f, 60 / 255f), "绯红");
+            CustomColorManager.RegisterCustomColor(new Color(218 / 255f, 165 / 255f, 32 / 255f), "黄花");
+            CustomColorManager.RegisterCustomColor(new Color(255 / 255f, 250 / 255f, 179 / 250f), "雪白");
+            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(65 / 255f, 32 / 255f, 43 / 255f), new Color(50 / 255f, 39 / 255f, 49 / 255f), "深橄榄"));
+            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(45 / 255f, 37 / 255f, 69 / 255f), new Color(135 / 255f, 179 / 255f, 155 / 255f), "腐烂"));
+            CustomColorManager.RegisterCustomColor(new Color(245 / 255f, 222 / 255f, 179 / 255f), "麦黄");
+            CustomColorManager.RegisterCustomColor(new CustomColorManager.AUColor(new Color(65 / 255f, 32 / 255f, 43 / 255f), new Color(50 / 255f, 39 / 255f, 49 / 255f), "深橄榄"));
             
             Settings.Load();
             

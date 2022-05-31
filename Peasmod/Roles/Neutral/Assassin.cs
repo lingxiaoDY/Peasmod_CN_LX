@@ -15,10 +15,10 @@ namespace Peasmod.Roles.Neutral
             Instance = this;
         }
 
-        public override string Name => "Assasin";
-        public override string Description => "Kill every player";
+        public override string Name => "刺客";
+        public override string Description => "杀死所有人";
         public override string LongDescription => "";
-        public override string TaskText => "Kill every impostor and crewmate";
+        public override string TaskText => "杀死所有伪装者和船员";
         public override Color Color => Color.magenta;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Alone;

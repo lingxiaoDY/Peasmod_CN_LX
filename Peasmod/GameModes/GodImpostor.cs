@@ -15,7 +15,7 @@ namespace Peasmod.GameModes
         {
         }
 
-        public override string Name => $"{PeasAPI.Utility.StringColor.Red}GodImpostor";
+        public override string Name => $"{PeasAPI.Utility.StringColor.Red}伪装者之神";
 
         public override bool Enabled => GameModeManager.IsGameModeActive(this);
 

@@ -13,10 +13,10 @@ namespace Peasmod.Roles.Neutral
     {
         public Jester(BasePlugin plugin) : base(plugin) { }
 
-        public override string Name => "Jester";
-        public override string Description => "Trick the crew";
+        public override string Name => "小丑";
+        public override string Description => "愚弄船员";
         public override string LongDescription => "";
-        public override string TaskText => "Trick the crew into voting you out";
+        public override string TaskText => "愚弄船员骗取投票让自己被驱逐";
         public override Color Color => ModdedPalette.JesterColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Alone;

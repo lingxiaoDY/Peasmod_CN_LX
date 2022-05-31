@@ -14,10 +14,10 @@ namespace Peasmod.Roles.GameModes
         {
         }
 
-        public override string Name => "Seeker";
-        public override string Description => "Find all the players";
+        public override string Name => "寻觅者";
+        public override string Description => "找到所有玩家";
         public override string LongDescription => "";
-        public override string TaskText => "Find all the players";
+        public override string TaskText => "找到所有玩家";
         public override Color Color => Palette.ImpostorRed;
         public override Visibility Visibility => Visibility.Crewmate;
         public override Team Team => Team.Impostor;

@@ -22,11 +22,11 @@ namespace Peasmod.Roles.Crewmate
             Instance = this;
         }
 
-        public override string Name => "Demon";
+        public override string Name => "幽灵骑士";
         public override Sprite Icon => Utility.CreateSprite("Peasmod.Resources.Buttons.SwapAfterlife.png", 650f);
-        public override string Description => "Swap into the afterlife";
+        public override string Description => "交换然后转生";
         public override string LongDescription => "";
-        public override string TaskText => "Swap into the afterlife";
+        public override string TaskText => "交换然后转生";
         public override Color Color => ModdedPalette.DemonColor;
         public override Visibility Visibility => Visibility.NoOne;
         public override Team Team => Team.Crewmate;
@@ -34,10 +34,10 @@ namespace Peasmod.Roles.Crewmate
         public override Dictionary<string, CustomOption> AdvancedOptions { get; set; } = new Dictionary<string, CustomOption>()
         {
             {
-                "AbilityCooldown", new CustomNumberOption("demoncooldown", "Demon-Ability-Cooldown", 10, 60, 1, 20, NumberSuffixes.Seconds)
+                "AbilityCooldown", new CustomNumberOption("demoncooldown", "技能冷却时间", 10, 60, 1, 20, NumberSuffixes.Seconds)
             },
             {
-                "AbilityDuration", new CustomNumberOption("demonduration", "Demon-Ability-Duration", 10, 60, 1, 10, NumberSuffixes.Seconds)
+                "AbilityDuration", new CustomNumberOption("demonduration", "技能持续时间", 10, 60, 1, 10, NumberSuffixes.Seconds)
             }
         };
 
@@ -56,7 +56,7 @@ namespace Peasmod.Roles.Crewmate
                     PlayerControl.LocalPlayer.gameObject.layer = LayerMask.NameToLayer("Players");
                     Coroutines.Start(CoStartDemonAbility(((CustomNumberOption) AdvancedOptions["AbilityDuration"]).Value));
                 }, ((CustomNumberOption) AdvancedOptions["AbilityCooldown"]).Value,
-                Utility.CreateSprite("Peasmod.Resources.Buttons.SwapAfterlife.png", 650f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>Swap");
+                Utility.CreateSprite("Peasmod.Resources.Buttons.SwapAfterlife.png", 650f), p => p.IsRole(this) && !p.Data.IsDead, _ => true, text: "<size=40%>交换");
         }
 
         private IEnumerator CoStartDemonAbility(float cooldown)
